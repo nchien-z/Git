@@ -34,17 +34,18 @@ header {
     display: flex;
     align-items: center;
 }
+
 .team-photo img {
-    width: 100%;      /* Giảm kích thước ảnh */
-    max-width: 350px; /* Không vượt quá 350px */
-    height: auto;    /* Giữ tỷ lệ */
+    width: 100%;
+    max-width: 350px;
+    height: auto;
     display: block;
     margin: 0 auto;
 }
 
 /* --- FIXED logo size --- */
 .logo-image {
-    width: 50px;     /* kích thước logo */
+    width: 50px;
     height: auto;
     object-fit: contain;
     margin-right: 10px;
@@ -137,6 +138,13 @@ main {
     font-size: 1.2rem;
 }
 
+.team-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
 .team-name {
     font-size: 1.8rem;
     color: #333;
@@ -151,7 +159,7 @@ main {
     margin: 0 auto;
 }
 
-/* ------------------- PLACEHOLDER PAGES ------------------- */
+/* ------------------- ABOUT PAGE - MEMBER SECTIONS ------------------- */
 .placeholder-content {
     text-align: center;
     padding: 60px 20px;
@@ -170,8 +178,89 @@ main {
     font-size: 1.2rem;
     color: #666;
     max-width: 600px;
-    margin: 0 auto;
+    margin: 0 auto 30px;
 }
+
+/* ===== STYLE CHO SECTION THÀNH VIÊN ===== */
+.member-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    background: #f9f9f9;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.member-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.member-photo {
+    flex-shrink: 0;
+    margin-right: 1.5rem;
+}
+
+.member-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #4285f4;
+    transition: border-color 0.3s ease;
+}
+
+.member-section:hover .member-image {
+    border-color: #005f8a;
+}
+
+.member-info {
+    flex: 1;
+    text-align: left;
+}
+
+.member-name {
+    margin-top: 0;
+    color: #2d3748;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.member-bio {
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.member-socials {
+    margin-top: 1rem;
+}
+
+.social-link {
+    display: inline-block;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    background: #4285f4;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.social-link:hover {
+    background: #005f8a;
+    transform: translateY(-2px);
+}
+
+/* ------------------- CONTACT PAGE ------------------- */
+/* Thêm style cho contact page nếu cần */
 
 /* ------------------- FOOTER ------------------- */
 footer {
@@ -204,5 +293,76 @@ footer {
 
     .home-subtitle {
         font-size: 1.2rem;
+    }
+    
+    /* Responsive cho member section */
+    .member-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+        max-width: 90%;
+    }
+    
+    .member-photo {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .member-image {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .member-info {
+        text-align: center;
+    }
+    
+    .member-name {
+        font-size: 1.3rem;
+    }
+    
+    .member-bio {
+        font-size: 0.95rem;
+    }
+    
+    .social-link {
+        margin: 0.25rem;
+        padding: 0.3rem 0.6rem;
+        font-size: 0.85rem;
+    }
+    
+    .placeholder-content {
+        padding: 40px 15px;
+    }
+    
+    .placeholder-title {
+        font-size: 1.5rem;
+    }
+    
+    .placeholder-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-title {
+        font-size: 1.5rem;
+    }
+    
+    .home-subtitle {
+        font-size: 1rem;
+    }
+    
+    .team-photo {
+        height: 250px;
+        max-width: 280px;
+    }
+    
+    .team-name {
+        font-size: 1.3rem;
+    }
+    
+    .team-slogan {
+        font-size: 1rem;
     }
 }
